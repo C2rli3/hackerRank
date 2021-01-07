@@ -6,15 +6,17 @@
 
 
 function insertionSort1(n, arr){
+                
+//for(let i=0; i<n;i++)
+//{
+//let left = arr[n-(i+2)];
+//let rightecho  = arr[n-(i+1)];
+//!arr[n-(i+2)]<=arr[n-(i+1)] ? arr[n-(i+2)] = arr[n-(i+1)]  : ' ';
+//console.log(arr);
 
-for(let i=0; i<n;i++)
-{
-let left = arr[n-(i+2)];
-let right = arr[n-(i+1)]
-!arr[n-(i+2)]<=arr[n-(i+1)] ? arr[n-(i+2)] = arr[n-(i+1)]  : ' ';
-console.log(arr);
-}
-console.log(arr);
+//is the right smaller than the left element? _____left element___ > right____element == true ?? 
+arr.reverse().join().split(',').map(current => console.log(current));
+console.log(arr.reverse());
 }
 
 insertionSort1(5,[1,2,4,5,3]);
