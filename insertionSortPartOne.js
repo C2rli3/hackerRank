@@ -1,37 +1,44 @@
-// n = length of array
-// arr =  array to be sorted
-//Carlie Guevara
-////January 6th, 2020
-// Jamaica, Queens, New York
-// you could this without using map. 
-// using this to store information and run the task within a microTask recursion
+//Carlie Guevara x insertionSort1 HackerRank
+//Given:
+//function insert1(n,arr){}
+//arr = all in order minues arr[n-1]
+//n=5 length of arr
+//starting index=arr[n-1]; direction <-negative
 
+insert1 = (n, arr) => {
 
+this.i = 1;
+this.j= 2;
 
+const stored = arr[n-1];
 
+this.index =  arr[n-this.i] ;
 
-let n =5;
-let arr = [1,2,4,5,3];
+this.left = arr[n-this.j];
 
-function insertionSort1(n,arr){
-this.store = arr[n];
-this.arr =arr;
-//is the right smaller than the left element? _____left element___ > right____element == true ?? 
-arr.reverse().join().split(',').map(current => 
+const comparison = arr[n-this.j] < this.index;
 
-current == undefined ? '' :
+reassignment= () => {
 
-queueMicrotask( () => {
-c
-//current == undefined ? '' : th 
+let temp = arr[n-this.j];
+arr[n-this.i] = temp;
+console.log(arr);
+this.i+=1;
+this.j+=1;
 }
-)
-);
-console.log(arr.reverse());
-};
-
-insertionSort1(5,[1,2,4,5,3]);
 
 
 
+comparison ? reassignment() : insert1(n,arr);
 
+
+arr.splice(this.j,0,stored);
+
+arr.pop();
+
+console.log(arr);
+
+}
+
+
+insert1(5, [1,2,4,5,3]);
