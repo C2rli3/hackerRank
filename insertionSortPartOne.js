@@ -7,38 +7,30 @@
 
 insert1 = (n, arr) => {
 
-this.i = 1;
-this.j= 2;
+this.store = arr[n-1];
+this.values = arr.reverse().values();
+n-=1;
 
-const stored = arr[n-1];
+queueMicrotask( () => {
 
-this.index =  arr[n-this.i] ;
+for(const current of this.values) {
 
-this.left = arr[n-this.j];
-
-const comparison = arr[n-this.j] < this.index;
-
-reassignment= () => {
-
-let temp = arr[n-this.j];
-arr[n-this.i] = temp;
-console.log(arr);
-this.i+=1;
-this.j+=1;
+(current<arr[n]) 
+? (
+ arr.pop(),
+arr.splice(n,0,this.store),
+arr.reverse(),
+console.log(arr)
+)
+: ( 
+arr[n] = arr[n-1],
+console.log(arr),
+n-=1
+)
 }
 
-
-
-comparison ? reassignment() : insert1(n,arr);
-
-
-arr.splice(this.j,0,stored);
-
-arr.pop();
-
-console.log(arr);
+});
 
 }
-
 
 insert1(5, [1,2,4,5,3]);
