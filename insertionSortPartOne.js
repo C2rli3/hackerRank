@@ -24,8 +24,7 @@ console.log(arr)
 )
 : ( 
 arr[n] = arr[n-1],
-console.log(arr),
-n-=1
+m-=1
 )
 }
 
